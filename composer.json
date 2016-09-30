@@ -1,0 +1,27 @@
+{
+  "name": "dparadiz/grpc",
+  "description": "PHP wrapper for gRPC",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dejan Paradiž",
+      "email": "dparadiz@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "ext-grpc": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "5.5.*"
+  },
+  "suggest": {
+    "protobuf-php/protobuf" : "Protobuf for PHP is an implementation of Google's Protocol Buffers for the PHP language."
+  },
+  "autoload": {
+    "psr-4": {
+      "Grpc\\": "src/"
+    }
+  }
+}
