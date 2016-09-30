@@ -52,7 +52,7 @@ by following command
 php ./vendor/bin/protobuf --include-descriptors -i . -o ./example/ ./helloword.proto
 ```
 
-This will generate flowing folder structure
+This will generate following folder structure
 ```console
 example/
 └── Helloworld   
@@ -61,8 +61,7 @@ example/
     └── HelloRequest.php
 ```
 
-Now we need to create `Helloworld\ClientStub` implementing `Helloworld\Greeter` interface and extending 
-`Grpc\ClientStub`.
+Now we need an implementation of `Helloworld\Greeter` which can be like this.
 
 ```php
 namespace Helloworld;
@@ -90,7 +89,7 @@ class ClientStub extends Grpc\ClientStub implements Greeter
 }
 ```
 
-ClientStub is responsible for preparing right data for the call and returning the correct type. Now we can call
+Here ClientStub is responsible for preparing right data for the call and returning the correct type. Now we can call
 the client 
 
 ```php
@@ -108,8 +107,8 @@ $replay = $client->sayHello($message);
 echo $replay->getMessage() . PHP_EOL;
 ```
 
-Here we assume that server is running on localhost and port 50051. More how to start server
-can be found [https://github.com/grpc/grpc/tree/master/examples](https://github.com/grpc/grpc/tree/master/examples)
+> Here we assume that server is running on localhost and port 50051. More about how to start server
+can be found on [https://github.com/grpc/grpc/tree/master/examples](https://github.com/grpc/grpc/tree/master/examples)
 
 
 
